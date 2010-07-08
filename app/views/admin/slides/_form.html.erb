@@ -1,0 +1,66 @@
+<% hook :admin_inside_slideshow_form do %>
+  <% f.field_container :name do %>
+    <%= f.label :name, t("name") %> <span class="required">*</span><br />
+    <%= error_message_on :slide, :name, :class => 'fullwidth title'  %>
+    <%= text_field :slide, :name  %>
+  <% end %>
+
+  <% f.field_container :groups do %>
+    <%= f.label :groups, t("groups") %><br />
+    <%= error_message_on :slide, :groups, :class => 'fullwidth title'  %>
+    <%= text_field :slide, :groups  %>
+  <% end %>
+
+  <%= image_tag @slide.img.url(:thumb) %>
+
+  <% f.field_container :img_file_name do %>
+    <%= f.label :img_file_name, t("filename") %><span class="required">*</span><br />
+    <%= error_message_on :slide, :img_file_name, :class => 'fullwidth title'  %>
+    <%= file_field :slide, :img  %>
+  <% end %>
+
+  <% f.field_container :locale do %>
+    <%= f.label :locale, t("locale") %><br />
+    <%= error_message_on :slide, :locale, :class => 'fullwidth title'  %>
+    <%= collection_select(:slide, :locale, AVAILABLE_LOCALES.keys, :to_s, :to_s, {:include_blank => true}) %>
+  <% end %>
+
+  <% f.field_container :url do %>
+    <%= f.label :url, t("target_url") %><span class="required">*</span><br />
+    <%= error_message_on :slide, :url, :class => 'fullwidth title'  %>
+    <%= text_field :slide, :url  %>
+  <% end %>
+
+  <% f.field_container :enabled do %>
+    <%= f.label :enabled, t("enabled") %><span class="required">*</span><br />
+    <%= error_message_on :slide, :enabled, :class => 'fullwidth title'  %>
+      <label class="sub">
+        <%= radio_button(:slide, :enabled, true ) %>
+        <%= t("yes") %>
+      </label> &nbsp; 
+      <label class="sub">
+        <%= radio_button(:slide, :enabled, false ) %>
+        <%= t("no") %>
+      </label>
+  <% end %>
+
+  <% f.field_container :included do %>
+    <%= f.label :included, t("included") %><span class="required">*</span><br />
+    <%= error_message_on :slide, :included, :class => 'fullwidth title'  %>
+      <label class="sub">
+        <%= radio_button(:slide, :included, true ) %>
+        <%= t("yes") %>
+      </label> &nbsp; 
+      <label class="sub">
+        <%= radio_button(:slide, :included, false ) %>
+        <%= t("no") %>
+      </label>
+  <% end %>
+
+  <% f.field_container :position do %>
+    <%= f.label :position, t("position") %><span class="required">*</span><br />
+    <%= error_message_on :slide, :position, :class => 'fullwidth title'  %>
+    <%= text_field :slide, :position  %>
+  <% end %>
+
+<% end %>

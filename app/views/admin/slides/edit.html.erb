@@ -1,0 +1,8 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<h1><%= t("edit_slide")%></h1>
+<%= error_messages_for :slide %>
+<% form_for(@slide, :url => object_url, :html => { :multipart => true }) do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+  <%= render :partial => "admin/shared/edit_resource_links" %>
+<% end %>
