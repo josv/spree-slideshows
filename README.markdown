@@ -4,17 +4,17 @@ This extension allows easy addition and administration of slideshows in Spree.
 
 # INSTALLATION #
 
-   1. Clone the git repo to SPREE_ROOT/vendor/extensions/slideshows or install the extension
+   Clone the git repo to SPREE_ROOT/vendor/extensions/slideshows or install the extension
 
 	git clone git://github.com/josv/spree-slideshows.git slideshows
       or
 	script/extension install git://github.com/josv/spree-slideshows.git
 
-   2. Migrate the database
+   Migrate the database
 
 	rake db:migrate
 
-   3.Restart server
+   Restart server
 
 # USAGE #
 
